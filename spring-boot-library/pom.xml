@@ -29,12 +29,12 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
-    <dependencies>
+	<dependencies>
 
 		<dependency>
 			<groupId>com.okta.spring</groupId>
-            <artifactId>okta-spring-boot-starter</artifactId>
-            <version>3.0.7</version>
+			<artifactId>okta-spring-boot-starter</artifactId>
+			<version>3.0.7</version>
 		</dependency>
 
 		<dependency>
@@ -47,28 +47,34 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.mariadb.jdbc</groupId>
-			<artifactId>mariadb-java-client</artifactId>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
-            </dependency>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-            </dependency>
+		</dependency>
 
-          <dependency>
-             <groupId>me.paulschwarz</groupId>
-             <artifactId>spring-dotenv</artifactId>
-             <version>4.0.0</version>
-          </dependency>
- 
-    </dependencies>
+		<dependency>
+			<groupId>me.paulschwarz</groupId>
+			<artifactId>spring-dotenv</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+	</dependencies>
 
 	<build>
 		<plugins>

@@ -5,7 +5,6 @@ import com.luv2code.spring_boot_library.responcemodels.ShelfCurrentLoansResponce
 import com.luv2code.spring_boot_library.service.BookService;
 import com.luv2code.spring_boot_library.utils.ExtractJwt;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -21,11 +20,10 @@ public class BookController {
 
   private BookService bookService;
 
-  @Autowired
   public BookController(BookService bookService) {
     this.bookService = bookService;
   }
-
+  
   @GetMapping("/secure/currentloans")
   public List<ShelfCurrentLoansResponce>
   currentLoans(@RequestHeader("Authorization") String token) throws Exception {
@@ -63,6 +61,7 @@ public class BookController {
     String userEmail = ExtractJwt.payloadJwtExtraction(token, "\"sub\"");
     bookService.returnBook(userEmail, bookId);
   }
+
 
   @PutMapping("/secure/renew/loan")
   public void revewLoa(@RequestHeader("Authorization") String token,
